@@ -1,5 +1,12 @@
 # Hogwarts: The React app for fans of prize-winning pigs
 
+App 
+  Hogcards -- Passes image prop to PigImage 
+    Hog
+    PigImage
+  Nav
+
+
 ## React Week 1 Project
 
 ## Deliverables

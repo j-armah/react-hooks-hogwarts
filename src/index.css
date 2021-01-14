@@ -4,10 +4,13 @@ body {
   font-family: sans-serif;
 }
 
+
 .App {
   margin: 0% 5% 0% 5%;
   text-align: center;
 }
+
+
 
 .TwirlyPig {
   transition: all 3s ease-in-out;
@@ -149,4 +152,17 @@ ul {
   to {
     transform: rotate(360deg);
   }
+}
+
+img {
+  width: 100px;
+  height: 100px;
+ }
+ 
+ .hidden {
+  display: none;
+}
+
+#hidden {
+  display: none;
 }
