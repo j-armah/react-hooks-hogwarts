@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Nav from "./Nav";
 import HogCards from './HogCards'
+import Form from './Form'
 
 import porkers from "../porkers_data";
 
@@ -26,8 +27,8 @@ function App() {
 
 
   const handleNameSort = () => {
-    console.log("hey")
-    const sortedHogs = porkers.sort((a, b) => {
+    let array = [...porkers]
+    const sortedHogs = array.sort((a, b) => {
       if (a.name < b.name) {
         return -1
       }
@@ -40,11 +41,25 @@ function App() {
     setHogs(sortedHogs)
   }
 
+  const handleWeightSort = () => {
+    let array = [...porkers]
+    const sortedHogs = array.sort((a, b) => {
+      if (a.weight < b.weight) {
+        return -1
+      }
+      if (a.weight > b.weight) {
+        return 1
+      }
+      return 0
+    })
+    setHogs(sortedHogs)
+  }
+
   return (
     <div className="App">
       <Nav />
 
-    <label for="grease">Filter by Grease</label>
+    <label htmlFor="grease">Filter by Grease</label>
     
     <select name="grease" id="grease" onChange={(e) => handleChange(e.target.value)}>
       <option value="all">All</option>
@@ -52,7 +67,13 @@ function App() {
       <option value="false">Ungreased</option>
     </select>
     <div>
-      <button onClick={handleNameSort}>Sort by Name</button><button>Sort by Weight</button>
+      <button onClick={handleNameSort}>Sort by Name</button>
+      <button onClick={handleWeightSort}>Sort by Weight</button>
+    </div>
+    <div>
+      <h4>Add Hoggermens</h4>
+      <Form />
+
     </div>
 
     <br/>
