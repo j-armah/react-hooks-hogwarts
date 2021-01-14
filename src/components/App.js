@@ -55,6 +55,10 @@ function App() {
     setHogs(sortedHogs)
   }
 
+  const handleNewPig = (formData) => {
+    setHogs([...hogs, formData])
+  }
+
   return (
     <div className="App">
       <Nav />
@@ -72,7 +76,7 @@ function App() {
     </div>
     <div>
       <h4>Add Hoggermens</h4>
-      <Form />
+      <Form newPig={handleNewPig}/>
 
     </div>
 

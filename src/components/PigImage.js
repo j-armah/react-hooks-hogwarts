@@ -17,12 +17,16 @@ function PigImage({ name }) {
     let pigArray = [truffle_shuffle, trouble, porkchop, piglet, piggy_smalls, babe, peppa, augustus_gloop, bailey, cherub, galaxy_note, leggo_my_eggo ]
    
     
-    let pigName = name.toLowerCase().replace(" ","_")
+    let pigName = name.toLowerCase().replaceAll(" ","_")
+    console.log(pigName)
 
     const selectedPig = pigArray.find(pig => {
         return pig.includes(pigName)
     })
 
+    if (selectedPig === undefined) {
+        return <img src={babe} alt={name}/>
+    }
     return (
         <img src={selectedPig} alt={name}/>
     )
